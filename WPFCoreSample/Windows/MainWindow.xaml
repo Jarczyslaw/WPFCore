@@ -1,0 +1,33 @@
+﻿<Window x:Class="WPFCoreSample.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCoreSample"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Width="{StaticResource MinWidth}"
+        Height="{StaticResource MinHeight}"
+        MinWidth="{StaticResource MinWidth}" 
+        MinHeight="{StaticResource MinHeight}">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Gray" Color="LightGray" />
+    </Window.Resources>
+    <DockPanel>
+        <!-- Buttons bar -->
+        <ScrollViewer DockPanel.Dock="Left">
+            <ItemsControl x:Name="PagesButtons" Width="150" Padding="5" Background="{StaticResource Gray}">
+                <ItemsControl.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Margin" Value="0, 0, 0, 10" />
+                        <Setter Property="Height" Value="50" />
+                    </Style>
+                </ItemsControl.Resources>
+            </ItemsControl>
+        </ScrollViewer>
+        <!-- Title box -->
+        <TextBlock x:Name="PageTitle" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" Background="{StaticResource Gray}" FontSize="14" Padding="5" />
+        <!-- Current content -->
+        <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden" />
+    </DockPanel>
+</Window>

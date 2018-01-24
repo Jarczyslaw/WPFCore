@@ -1,0 +1,33 @@
+﻿<local:BasePage x:Class="WPFCoreSample.Pages.CounterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFCoreSample.Pages"
+      xmlns:vm="clr-namespace:WPFCoreSample.ViewModels"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="CounterPage">
+
+    <Page.DataContext>
+        <vm:CounterViewModel />
+    </Page.DataContext>
+    <Border Padding="5">
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="0 5 0 0" />
+                </Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </StackPanel.Resources>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding CounterValue, StringFormat=Counter value: {0}}" />
+                <TextBlock Text="{Binding MaxCounterValue, StringFormat=Max value: {0}}" />
+            </StackPanel>
+            <Button Command="{Binding IncrementCommand}" Content="Increment" />
+            <Button Command="{Binding ResetCommand}" Content="Reset" />
+        </StackPanel>
+    </Border>
+</local:BasePage>
