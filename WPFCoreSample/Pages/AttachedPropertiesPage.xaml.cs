@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFCoreSample.AttachedProperties;
 
 namespace WPFCoreSample.Pages
 {
@@ -23,6 +24,16 @@ namespace WPFCoreSample.Pages
         public AttachedPropertiesPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<int> props = new List<int>();
+
+            var container = spAttachedContainer;
+            foreach (UIElement element in container.Children)
+                props.Add(IntegerAttachedProperty.GetValue(element));
+            MessageBox.Show(string.Join(", ", props));
         }
     }
 }

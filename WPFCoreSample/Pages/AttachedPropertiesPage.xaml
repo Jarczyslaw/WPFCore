@@ -4,11 +4,30 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WPFCoreSample.Pages"
+      xmlns:attached="clr-namespace:WPFCoreSample.AttachedProperties"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="AttachedPropertiesPage">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel VerticalAlignment="Center">
+        <GroupBox Header="Attached properties">
+            <StackPanel>
+               <StackPanel x:Name="spAttachedContainer">
+                    <TextBlock Text="Value = 1" attached:IntegerAttachedProperty.Value="1" />
+                    <Button Content="Value = 2" attached:IntegerAttachedProperty.Value="2" />
+                    <TextBox IsReadOnly="True" Text="Value = 3" attached:IntegerAttachedProperty.Value="3" />
+                </StackPanel>
+                <Button Content="Get attached properties values" Click="Button_Click" Margin="5" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Generic attached properties events">
+            <StackPanel>
+                <TextBox IsReadOnly="True" Margin="5" attached:StringAttachedProperty.Value="asdf" Text="{Binding (attached:StringAttachedProperty.Value), RelativeSource={RelativeSource Self}}" />
+                <TextBlock Text="Generic attached properties can not be used with Binding in XAML, in code behind everything should work correctly" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Classic attached property">
+            <TextBox attached:AdditionalText.Value="{Binding Text, RelativeSource={RelativeSource Self}}" />
+        </GroupBox>
+    </StackPanel>
 </local:BasePage>

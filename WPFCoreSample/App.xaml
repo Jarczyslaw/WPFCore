@@ -5,5 +5,9 @@
     <Application.Resources>
         <sys:Double x:Key="MinWidth">600</sys:Double>
         <sys:Double x:Key="MinHeight">600</sys:Double>
+        <Style TargetType="GroupBox">
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
     </Application.Resources>
 </Application>
