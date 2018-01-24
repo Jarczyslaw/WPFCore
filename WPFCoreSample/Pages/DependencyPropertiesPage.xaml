@@ -4,11 +4,24 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WPFCoreSample.Pages"
+      xmlns:controls="clr-namespace:WPFCoreSample.Controls"
+      xmlns:conv="clr-namespace:WPFCoreSample.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="DependencyPropertiesPage">
 
-    <Grid>
-        
-    </Grid>
+    <local:BasePage.Resources>
+        <conv:ColorToStringConverter x:Key="ColorToStringConverter" />
+    </local:BasePage.Resources>
+    <StackPanel VerticalAlignment="Center">
+        <GroupBox Header="Custom dependency property">
+           <controls:CustomTextBox CustomText="asdf" />
+        </GroupBox>
+        <GroupBox Header="Color picker">
+            <StackPanel>
+                <controls:ColorPicker x:Name="colorPicker" Color="Bisque" />
+                <TextBlock Text="{Binding Color, ElementName=colorPicker, Converter={StaticResource ColorToStringConverter}}" />
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
 </local:BasePage>

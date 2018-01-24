@@ -54,6 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\ColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AttachedPropertiesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,8 +93,15 @@
     <Compile Include="AttachedProperties\AdditionalText.cs" />
     <Compile Include="AttachedProperties\IntegerAttachedProperty.cs" />
     <Compile Include="AttachedProperties\StringAttachedProperty.cs" />
+    <Compile Include="Controls\ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomTextBox.cs" />
     <Compile Include="Converters\BoolToBrushConverter.cs" />
+    <Compile Include="Converters\ColorToStringConverter.cs" />
     <Compile Include="Converters\CustomDictionaryConverter.cs" />
+    <Compile Include="DependencyProperties\ColorPickerProperty.cs" />
+    <Compile Include="DependencyProperties\CustomTextBoxStringProperty.cs" />
     <Compile Include="Models\ConverterTypes.cs" />
     <Compile Include="Pages\AttachedPropertiesPage.xaml.cs">
       <DependentUpon>AttachedPropertiesPage.xaml</DependentUpon>
@@ -146,9 +157,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DependencyProperties\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\WPFCore\WPFCore.csproj">
       <Project>{B69D9019-4DF1-4F3E-8F5E-2EA22B9B9DC4}</Project>

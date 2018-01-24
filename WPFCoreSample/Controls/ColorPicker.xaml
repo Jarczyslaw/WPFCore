@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="WPFCoreSample.Controls.ColorPicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFCoreSample.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="GroupBox">
+            <Setter Property="Padding" Value="5" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Grid.Column="0" Header="Color values">
+            <GroupBox.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                </Style>
+            </GroupBox.Resources>
+            <UniformGrid Columns="2" Rows="4">
+                <Label Content="Red: " />
+                <TextBox x:Name="tbRed" Text="255" />
+                <Label Content="Green: " />
+                <TextBox x:Name="tbGreen" Text="255" />
+                <Label Content="Blue: " />
+                <TextBox x:Name="tbBlue" Text="255" />
+                <Label Content="Alpha: " />
+                <TextBox x:Name="tbAlpha" Text="255" />
+            </UniformGrid>
+        </GroupBox>
+        <GroupBox Grid.Column="1"  Header="Preview">
+            <Grid x:Name="gdPreview" Background="Blue" />
+        </GroupBox>
+    </Grid>
+</UserControl>
