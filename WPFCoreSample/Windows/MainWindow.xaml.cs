@@ -67,7 +67,8 @@ namespace WPFCoreSample.Windows
 
         private void OpenPage(Type pageType)
         {
-            if (openedPages.TryGetValue(pageType, out BasePage pageToOpen))
+            BasePage pageToOpen;
+            if (openedPages.TryGetValue(pageType, out pageToOpen))
                 pageToOpen = openedPages[pageType];
             else
             {

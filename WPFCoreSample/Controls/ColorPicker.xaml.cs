@@ -70,7 +70,8 @@ namespace WPFCoreSample.Controls
 
         private bool CheckValidValue(string text)
         {
-            return byte.TryParse(text, out byte result);
+            byte value;
+            return byte.TryParse(text, out value);
         }
 
         public void UpdateColor(Color newColor)
