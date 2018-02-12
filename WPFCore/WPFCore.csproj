@@ -34,6 +34,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,8 @@
     <Compile Include="BaseAttachedProperty.cs" />
     <Compile Include="BaseDependencyProperty.cs" />
     <Compile Include="BaseViewModel.cs" />
+    <Compile Include="Converters\BaseMultipleConverter.cs" />
+    <Compile Include="Converters\BaseSingleConverter.cs" />
     <Compile Include="Converters\BoolToValueConverter.cs" />
     <Compile Include="Converters\DictionaryConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

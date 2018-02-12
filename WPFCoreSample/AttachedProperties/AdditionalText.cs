@@ -10,7 +10,11 @@ namespace WPFCoreSample.AttachedProperties
 {
     public class AdditionalText
     {
-        public static readonly DependencyProperty ValueProperty = DependencyProperty.RegisterAttached("Value", typeof(string), typeof(AdditionalText), new PropertyMetadata(string.Empty, null, BaseCoerceValueCallback));
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.RegisterAttached(
+            "Value", 
+            typeof(string), 
+            typeof(AdditionalText), 
+            new PropertyMetadata(string.Empty, null, BaseCoerceValueCallback));
 
         public static string GetValue(DependencyObject d)
         {
